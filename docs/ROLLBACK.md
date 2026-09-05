@@ -22,3 +22,7 @@ Restore only the DTB/UCM/WirePlumber files you changed, using your saved backups
 Do not blindly restore someone else's full ALSA state. Check system Speaker and
 PipeWire/WirePlumber afterward. A module rollback does not revert the source
 patch; use `git apply --check -R` followed by `git apply -R` for that separately.
+
+For the separate persisted-channel migration and its saved-state rollback, see
+[ALSA-STATE.md](ALSA-STATE.md). An old state backup may contain the original
+bad mask; restoring it does not represent a working microphone configuration.

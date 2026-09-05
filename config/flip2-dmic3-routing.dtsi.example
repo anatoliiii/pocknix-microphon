@@ -6,4 +6,6 @@
 // audio-routing: "DMIC3", "MIC BIAS3",
 //                "DMIC3", "Internal Microphone",
 //                "TX SWR_DMIC2", "DMIC3_OUTPUT"
-// Do not add VA/GPIO routes: they did not fix the WCD microphone.
+// Do not add VA/GPIO experiments as part of this fix. Preserve the board baseline.
+// The tested DT retained historical VA entries; minimal-DT removal was not tested.
+// See docs/HISTORY-AUDIT.md.

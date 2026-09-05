@@ -53,6 +53,13 @@ Stop on a failed check; inspect the source instead of forcing offsets. Apply
 0003 similarly only if needed. It expects the existing `cpu_dai` variable in
 `sm8250_be_hw_params_fixup`; adapt with review if the function differs.
 
+## Saved ALSA state migration
+
+Before acoustic acceptance, inspect [saved WCD switch state](ALSA-STATE.md).
+The old driver may have persisted extra channels as enabled. Correcting the
+driver alone does not clean that file. Perform the migration only with the
+corrected driver loaded; preserve speakers and avoid a whole-card reset.
+
 ## Build
 
 For a WCD-only repair with unchanged driver headers/ABI:
@@ -136,3 +143,8 @@ Group necessary configuration/module changes before the same planned reboot.
 Keep PipeWire/WirePlumber enabled. There is no need to stop or mask them for the
 provided capture tests. A distribution update can replace custom modules;
 carry the patches in your kernel packaging and rebuild for the new ABI.
+
+## Historical configuration audit
+
+See [retained changes and earlier experiments](HISTORY-AUDIT.md) before reusing
+old helper scripts or changing the distribution power policy.

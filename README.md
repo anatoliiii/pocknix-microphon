@@ -22,7 +22,8 @@ WCD938x DMIC3 → SWR_DMIC2 → TX DEC0 → TX_CODEC_DMA_TX_3 → MultiMedia3
 1. Read [scope and prerequisites](docs/INSTALL.md#scope-and-prerequisites).
 2. Check which [patches and routing prerequisites](docs/INSTALL.md#choose-the-changes)
    your build already contains. Do not blindly apply a whole series.
-3. Back up, build for your exact kernel, verify ABI, install, then reboot once.
+3. Back up, build for your exact kernel, verify ABI, install and reboot.
+   Check [stale ALSA state](docs/ALSA-STATE.md); it can require a migration boot.
 4. Follow [acoustic validation](docs/VALIDATION.md), then repeat after a second boot.
 5. Keep a [rollback path](docs/ROLLBACK.md).
 

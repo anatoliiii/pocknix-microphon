@@ -12,6 +12,9 @@ python3 scripts/loaded-id.py
 Keep the boot ID locally to prove that the second pass is a different boot.
 Do not assume other builds must have the reference build ID in evidence/.
 
+If an older driver saved unwanted channels, complete the
+[ALSA state migration](ALSA-STATE.md) before counting acceptance boots.
+
 ## Record with an explicit start
 
 Prerequisites: Python 3 standard library, pw-record/pw-play, journalctl, and local
