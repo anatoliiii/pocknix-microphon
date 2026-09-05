@@ -1,0 +1,23 @@
+--- a/sound/soc/codecs/wcd938x.c
++++ b/sound/soc/codecs/wcd938x.c
+@@ -1063,6 +1063,10 @@
+ 				WCD938X_AMIC1_IN_SEL_DMIC);
+ 		/* 250us sleep as per HW requirement */
+ 		usleep_range(250, 260);
++		/* DMIC3 uses the DMIC2 left input, as in the factory driver. */
++		if (w->shift == 2)
++			snd_soc_component_update_bits(component,
++				WCD938X_DIGITAL_CDC_DMIC2_CTL, BIT(7), BIT(7));
+ 		/* Setting DMIC clock rate to 2.4MHz */
+ 		snd_soc_component_write_field(component, dmic_clk_reg,
+ 					      dmic_clk_mask,
+@@ -1077,6 +1081,9 @@
+ 		snd_soc_component_write_field(component,
+ 				WCD938X_DIGITAL_CDC_AMIC_CTL,
+ 				dmic_sel_mask, WCD938X_AMIC1_IN_SEL_AMIC);
++		if (w->shift == 2)
++			snd_soc_component_update_bits(component,
++				WCD938X_DIGITAL_CDC_DMIC2_CTL, BIT(7), 0);
+ 		snd_soc_component_write_field(component, dmic_clk_en_reg,
+ 					      WCD938X_DMIC_CLK_EN_MASK, 0);
+ 		break;

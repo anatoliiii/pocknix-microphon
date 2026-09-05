@@ -1,0 +1,21 @@
+Original documentation, helper scripts and configuration examples use the root
+MIT LICENSE, selected by the repository owner. Linux-derived patches in patches/
+retain GPL licensing; see patches/README.md and LICENSES/GPL-2.0-only.txt.
+The root MIT license does not relicense third-party Linux code or patch context.
+
+This is an independent community recovery report, not an official Retroid,
+PockNix, Qualcomm, Linux or ALSA release.
+
+WCD938x patch context is from Linux sound/soc/codecs/wcd938x.c:
+Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
+SPDX-License-Identifier: GPL-2.0-only.
+The machine-driver patch context is from Linux sound/soc/qcom/sm8250.c:
+Copyright (c) 2020, Linaro Limited; SPDX-License-Identifier: GPL-2.0.
+
+The missing operation was independently checked against the Retroid factory
+binary and publicly available Qualcomm source. Attribution and links are in
+docs/ROOT-CAUSE.md. Jonathan Marek's alternative channel-state proposal is
+referenced, not copied or claimed as our tested implementation.
+
+No factory vendor modules/images, kernel module binaries, personal recordings,
+raw system configuration archives or private conversation logs are distributed.

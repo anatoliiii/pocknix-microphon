@@ -1,0 +1,14 @@
+{
+  "device": "Retroid Pocket Flip2",
+  "soc": "SM8250",
+  "codec": "WCD9385",
+  "kernel_release": "7.2.0",
+  "pipewire": "1.6.8",
+  "tested_devices": 1,
+  "boots_validated": 2,
+  "wcd_module_sha256": "9340f8fb7fa5ba2bf76d36a913df73fcd0f5239c5ea40e8e02619d062ebcdf13",
+  "wcd_build_id": "13638dec78810b8dfac2fa6bfa05560b6c623b99",
+  "notes": "Reference artifacts not redistributed; rebuild for target ABI.",
+  "wcd_preimage_sha256": "c44ea48530145eac37209ffe4abfd744adfff3dacc9195c89a79fdb096b837df",
+  "wcd_final_sha256": "fdcb51dd1bc35f95b9bf92bb544d820b2721213d51379b81dc67a6c68f7c8348"
+}

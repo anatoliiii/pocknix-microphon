@@ -1,0 +1,9 @@
+/build/
+/results/
+*.wav
+*.ko
+*.img
+*.dtb
+*.tar.gz
+__pycache__/
+*.pyc

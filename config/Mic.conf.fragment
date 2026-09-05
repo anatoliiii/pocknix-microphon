@@ -1,0 +1,34 @@
+# SPDX-License-Identifier: MIT
+# Replace only the Mic device section in your existing HiFi UCM file.
+SectionDevice."Mic" {
+	Comment "Internal Microphone"
+
+	# Match Retroid's factory Android handset-mic route: WCD938x DMIC3,
+	# SoundWire channel SWR_DMIC2, TX macro DEC0 and TX_CODEC_DMA_TX_3.
+	EnableSequence [
+		cset "name='MultiMedia3 Mixer VA_CODEC_DMA_TX_0' 0"
+		cset "name='DMIC2 Switch' 1"
+		cset "name='DMIC3_MIXER Switch' 1"
+		cset "name='TX DEC0 MUX' SWR_MIC"
+		cset "name='TX SMIC MUX0' SWR_DMIC2"
+		cset "name='TX_AIF1_CAP Mixer DEC0' 1"
+		cset "name='TX_DEC0 Volume' 84"
+		cset "name='MultiMedia3 Mixer TX_CODEC_DMA_TX_3' 1"
+	]
+
+	DisableSequence [
+		cset "name='MultiMedia3 Mixer TX_CODEC_DMA_TX_3' 0"
+		cset "name='TX_AIF1_CAP Mixer DEC0' 0"
+		cset "name='TX SMIC MUX0' ZERO"
+		cset "name='TX DEC0 MUX' ZERO"
+		cset "name='DMIC3_MIXER Switch' 0"
+		cset "name='DMIC2 Switch' 0"
+		cset "name='TX_DEC0 Volume' 0"
+	]
+
+	Value {
+		CapturePriority 200
+		CapturePCM "hw:${CardId},2"
+		CaptureChannels 1
+	}
+}

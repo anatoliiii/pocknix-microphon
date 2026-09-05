@@ -1,0 +1,20 @@
+--- a/sound/soc/codecs/wcd938x.c
++++ b/sound/soc/codecs/wcd938x.c
+@@ -1854,7 +1854,7 @@
+ 	wcd = wcd938x->sdw_priv[dai_id];
+ 	portidx = wcd->ch_info[ch_idx].port_num;
+ 
+-	ucontrol->value.integer.value[0] = wcd->port_enable[portidx];
++	ucontrol->value.integer.value[0] = wcd->port_enable[ch_idx];
+ 
+ 	return 0;
+ }
+@@ -1880,7 +1880,7 @@
+ 	else
+ 		enable = false;
+ 
+-	wcd->port_enable[portidx] = enable;
++	wcd->port_enable[ch_idx] = enable;
+ 
+ 	wcd938x_connect_port(wcd, portidx, ch_idx, enable);
+ 
